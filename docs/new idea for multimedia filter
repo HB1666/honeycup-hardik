@@ -1,0 +1,71 @@
+
+New Idea for Multimedia Filter
+Overview
+This document outlines a new design for a multimedia filter in a chat application, where images and videos sent between users are scanned for explicit content. The filter will notify the receiver and provide an option to view or reject the content.
+
+Key Features
+1. Content Scanning
+Automatic Filtering: All images and videos sent in the chat are automatically scanned for explicit content.
+Explicit Content Detection: Uses machine learning models to detect explicit content in multimedia files.
+2. Notifications
+Receiver Notification: If explicit content is detected, the receiver is notified before viewing the content.
+Option to View or Reject: The receiver is given the option (YES or NO) to view the content after being informed of its nature.
+3. Privacy and Security
+Secure Scanning: Ensure that the scanning process respects user privacy and data security.
+Content Encryption: Maintain end-to-end encryption for all multimedia files.
+Model Explanation
+Content Scanning
+Machine Learning Model: Implement a pre-trained model for detecting explicit content in images and videos.
+Scanning Process: Multimedia files are scanned on the server side before being delivered to the receiver.
+Notifications
+Notification Trigger: If explicit content is detected, trigger a notification to the receiver.
+User Interface: Display a notification with options (YES or NO) to view or reject the content.
+Privacy and Security
+Data Privacy: Ensure that the scanning process does not compromise user privacy.
+End-to-End Encryption: Maintain encryption throughout the scanning and delivery process.
+Model Example
+json
+Copy code
+{
+  "_id": "unique_chat_id",
+  "participants": [
+    "user_id_1",
+    "user_id_2"
+  ],
+  "messages": [
+    {
+      "message_id": "unique_message_id_1",
+      "sender_id": "user_id_1",
+      "receiver_id": "user_id_2",
+      "content": null,
+      "content_type": "image",
+      "content_link": "https://example.com/image.jpg",
+      "timestamp": "2024-06-01T10:00:00Z",
+      "is_read": false,
+      "is_explicit": true,
+      "explicit_check": {
+        "status": "pending",
+        "decision": null
+      }
+    }
+  ],
+  "settings": {
+    "content_filter": true
+  }
+}
+Example Workflow
+User A sends an image to User B.
+The image is uploaded to the server and scanned for explicit content using a machine learning model.
+If explicit content is detected, a notification is sent to User B with an option (YES or NO) to view the image.
+User B decides whether to view or reject the image based on the notification.
+If User B selects YES, the image is displayed. If NO, the image is not shown and is deleted.
+Benefits
+Enhanced Safety: Users are protected from unwanted explicit content.
+User Control: Receivers have control over whether they want to view potentially explicit content.
+Trust and Security: Builds trust in the platform by ensuring a safer communication environment.
+Future Enhancements
+Customizable Filters: Allow users to set their own preferences for content filtering.
+Detailed Reporting: Provide detailed reports to users about the types of content being filtered.
+Real-Time Feedback: Implement real-time feedback mechanisms to improve the accuracy of the content filter.
+Conclusion
+The Multimedia Filter is designed to offer a safer and more controlled communication experience within your dating app. By implementing this feature, users can enjoy a secure environment where they have the choice to view or reject potentially explicit content, enhancing overall user trust and satisfaction.
